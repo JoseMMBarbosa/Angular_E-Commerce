@@ -1,0 +1,70 @@
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+<button (click)=actuliza() class="btn btn-primary" style= "margin-left:87%;display:flex; padding: 6px 25px;">Update</button>
+<div class="container bootstrap snippet" style="padding-top: 1rem;">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="main-box no-header clearfix">
+                <div class="main-box-body clearfix">
+                    <div class="table-responsive">
+                        <table class="table user-list">
+                            <thead>
+                                <tr>
+                                <th><span>Image</span></th>
+                                <th><span>Name</span></th>
+                                <th><span>Expiration</span></th>
+                                <th class="text-center"><span>Stock</span></th>
+                                <th class="text-center"><span>Price</span></th>
+                                <th><span>Location</span></th>
+                                <th><span>Entity</span></th>
+                                <th>&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let produto of produtos">
+                                <tr>
+                                    <td>
+                                        <img src="{{produto.imagem}}" alt="">
+                                    </td>
+                                    <td>
+                                      <span >{{produto.nome}}</span>
+                                  </td>
+                                    <td style="padding-left: 1rem;">
+                                      <span>{{produto.dataValidade | date:'dd/MM/yyyy'}}</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="label label-default">{{produto.stock}}</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="label label-default">{{produto.preco}}</span>
+                                    </td>
+                                    <td>
+                                        <samp>{{produto.idLocal.nome}}</samp>
+                                    </td>
+                                    <td>
+                                      <samp>{{produto.idEntidade.nome}}</samp>
+                                  </td>
+                                    <td style="width: 15%;">
+                                      <button  class="button" type="button" name="#btApagar">
+                                          <span class="fa-stack">
+                                              <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+                                          </span>
+                                      </button>
+                                      <button class="button" type="button" name="#btApagar">
+                                          <span class="fa-stack">
+                                              <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                                          </span>
+                                      </button>
+                                      <button (click)=apagarProduto(produto) class="button3" type="button" name="#btApagar">
+                                          <span class="fa-stack">
+                                              <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                                          </span>
+                                      </button>
+                                  </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col-md-11 mx-auto">
+    <div class="card" style="border-radius: 20px 20px 20px 20px">
+      <div class="card-header" style="background-color:cornflowerblue; border-radius: 20px 20px 0px 0px">
+        <h3 class="mb-0">Subcategory Registration</h3>
+      </div>
+      <div class="card-body">
+        <!-- Default form register -->
+        <form (submit)="registarSub($event)" calss="text-center border border-light p-5">
+
+          <div class="form-group">
+            <!-- First name -->
+
+            <label>Name</label>
+
+            <input required ngModel name="nomeSub" #nomeSub="ngModel" type="text" id="nomeSub" class="form-control mb-3"
+              placeholder="Name...">
+            <div class="alert alert-danger" role="alert" *ngIf="nomeSub.touched && !nomeSub.valid">
+              The Name is required
+            </div>
+
+            <label>Description</label>
+
+            <input required ngModel name="descSub" #descSub="ngModel" type="text" id="descSub" class="form-control mb-3"
+              placeholder="Description...">
+            <div class="alert alert-danger" role="alert" *ngIf="descSub.touched && !descSub.valid">
+              The Description is required
+            </div>
+
+            <label>Category</label>
+
+            <select required ngModel name="cat" #cat="ngModel" id="cat" class="form-control mb-3">
+              <option *ngFor="let categoria of categorias" [ngValue]="categoria._id">
+                {{categoria.nome}}
+              </option>
+            </select>
+
+            <!-- Sign up button -->
+            <button mdbBtn color="info" class="btn btn-primary"
+              style="margin-left:auto;margin-right:auto;display:block;margin-top:12%;margin-bottom:0%" type="submit"
+              valeu="submit" block="true">Register</button>
+          </div>
+        </form>
+        <!-- Default form register -->
+      </div>
+    </div>
+  </div>
+</div>

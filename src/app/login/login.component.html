@@ -1,0 +1,50 @@
+<div class="row" style="padding-top: 10rem;" >
+  <div class="col-md-4 mx-auto">
+    <div class="card" style="border-radius: 20px 20px 20px 20px">
+      <div class="card-header" style="background-color:cornflowerblue; border-radius: 20px 20px 0px 0px">
+        <h3 class="mb-0" >Login</h3>
+      </div>
+      <div class="card-body">
+        <form (submit)="login($event)" class="text-left border border-light p-5">
+
+          <label>Email</label>
+          <!-- Email -->
+          <input required ngModel
+          name="email"
+          type="email"
+          id="email"
+          #email="ngModel"
+          class="form-control mb-4"
+          placeholder="Email...">
+          <!-- Password -->
+
+          <label>Password</label>
+
+          <input required ngModel
+          name="pass"
+          type="password"
+          id="password"
+          #pass="ngModel"
+          class="form-control mb-4"
+          placeholder="Password...">
+          <div class="d-flex justify-content-around">
+            <div>
+              <!-- Remember me -->
+              <a href="">Remember me</a>
+            </div>
+            <div>
+              <!-- Forgot password -->
+              <a href="">Forgot password?</a>
+            </div>
+          </div>
+          <!-- Sign in button -->
+          <button mdbBtn color="info" class="btn btn-primary" style="margin-left:auto;margin-right:auto;display:block;margin-top:12%;margin-bottom:0%" type="submit" valeu="submit" block="true">Sign in</button>
+          <!-- Register -->
+          <p style="text-align: center;">Not a member?
+            <a href="">Register</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

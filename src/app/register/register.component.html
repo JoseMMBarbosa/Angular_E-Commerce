@@ -1,0 +1,87 @@
+<div class="row" style="padding-top: 10rem;">
+  <div class="col-md-4 mx-auto">
+    <div class="card" style="border-radius: 20px 20px 20px 20px">
+      <div class="card-header" style="background-color:cornflowerblue; border-radius: 20px 20px 0px 0px">
+        <h3 class="mb-0">Customer Registration</h3>
+      </div>
+      <div class="card-body">
+        <!-- Default form register -->
+        <form (submit)="registarCli($event)" calss="text-center border border-light p-5">
+
+          <div class="form-group">
+
+            <label>Email</label>
+
+            <input required ngModel name="email" #email="ngModel" (change)="log(email)" type="email" id="email"
+              class="form-control mb-3" placeholder="Email...">
+            <div class="alert alert-danger" role="alert" *ngIf="email.touched && !email.valid">
+              The Email is required
+            </div>
+
+            <label>Username</label>
+
+            <input required ngModel name="user" #user="ngModel" type="text" id="user" class="form-control mb-3"
+              placeholder="Username...">
+              <div class="alert alert-danger" role="alert" *ngIf="user.touched && !user.valid">
+                The Username is required
+              </div>
+
+            <label>Password</label>
+
+            <input required ngModel name="pass" #pass="ngModel" type="password" id="pass" class="form-control mb-3"
+              placeholder="Password...">
+            <div class="alert alert-danger" role="alert" *ngIf="pass.touched && !pass.valid">
+              The Password is required
+            </div>
+
+            <label>Name</label>
+
+            <input required ngModel name="name" #name="ngModel" type="text" id="name" class="form-control mb-3"
+              placeholder="Name...">
+              <div class="alert alert-danger" role="alert" *ngIf="name.touched && !name.valid">
+                The Name is required
+              </div>
+
+            <label>Location</label>
+
+            <input required ngModel name="localidade" #localidade="ngModel" type="text" id="localidade"
+              class="form-control mb-3" placeholder="Location...">
+              <div class="alert alert-danger" role="alert" *ngIf="localidade.touched && !localidade.valid">
+                Location is required
+              </div>
+
+              <label>Address</label>
+
+            <input required ngModel name="morada" #morada="ngModel" type="text" id="morada" class="form-control mb-3"
+              placeholder="Address...">
+              <div class="alert alert-danger" role="alert" *ngIf="morada.touched && !morada.valid">
+                Address is required
+              </div>
+
+              <label>NIF</label>
+
+            <input required ngModel name="nif" #nif="ngModel" type="text" id="nif" class="form-control mb-3"
+              placeholder="NIF...">
+              <div class="alert alert-danger" role="alert" *ngIf="nif.touched && !nif.valid">
+                NIF is required
+              </div>
+
+              <label>Contact</label>
+
+            <input required ngModel name="contacto" #contacto="ngModel" type="text" id="contacto" class="form-control mb-3"
+              placeholder="Contact...">
+              <div class="alert alert-danger" role="alert" *ngIf="contacto.touched && !contacto.valid">
+                The Contact is required
+              </div>
+
+            <!-- Sign up button -->
+            <button mdbBtn color="info" class="btn btn-primary"
+              style="margin-left:auto;margin-right:auto;display:block;margin-top:6%;margin-bottom:0%;padding: 15px 35%"
+              type="submit" valeu="submit" block="true">Register</button>
+          </div>
+        </form>
+        <!-- Default form register -->
+      </div>
+    </div>
+  </div>
+</div>

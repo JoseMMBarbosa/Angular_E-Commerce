@@ -1,0 +1,149 @@
+<div class="row" style="padding-top: 1rem;" >
+  <div class="col-md-8 mx-auto">
+    <div class="card" style="border-radius: 20px 20px 20px 20px">
+      <div class="card-header" style="background-color:cornflowerblue; border-radius: 20px 20px 0px 0px">
+        <h3 class="mb-0" >Create Product</h3>
+      </div>
+      <div class="card-body">
+        <!-- Default form register -->
+<form (submit)="criarProduto($event)" calss="text-center border border-light p-5">
+
+    <div class="form-group">
+
+      <label for="name">Name</label>
+
+     <input  required ngModel
+       name="name"
+       #name="ngModel"
+       type="text"
+       id="name"
+       class="form-control mb-3"
+       placeholder="Name...">
+     <div class="alert alert-danger" role="alert" *ngIf="name.touched && !name.valid">
+      The Name is required
+    </div>
+
+    <label>Stock</label>
+
+    <input required ngModel
+     name="stock"
+     #stock="ngModel"
+     type="text"
+     id="stock"
+     class="form-control mb-3"
+     placeholder="Stock...">
+     <div class="alert alert-danger" role="alert" *ngIf="stock.touched && !stock.valid">
+      The Stock is required
+    </div>
+
+     <label>Product Type</label>
+
+     <select required ngModel
+     name="tipoProduto"
+     #tipoProduto="ngModel"
+     id="tipoProduto"
+     class="form-control mb-3"
+     placeholder="Product Type...">
+     <option *ngFor ="let tipoProduto of tipoProdutos" [ngValue]= "tipoProduto._id" >
+       {{tipoProduto.nome}}
+     </option>
+    </select>
+
+    <label>Location</label>
+
+    <select required ngModel
+     name="local"
+     #local="ngModel"
+     id="local"
+     class="form-control mb-3">
+     <option *ngFor ="let local of locais" [ngValue]= "local._id" >
+      {{local.nome}}
+    </option>
+    </select>
+
+    <label>Initial Date</label>
+
+     <input  required ngModel
+       name="dataInicio"
+       #dataInicio="ngModel"
+       type="date"
+       id="dataInicio"
+       class="form-control mb-3"
+       placeholder="Initial Date...">
+     <div class="alert alert-danger" role="alert" *ngIf="dataInicio.touched && !dataInicio.valid">
+      Initial Date is required
+    </div>
+
+    <label>Expiration Date</label>
+
+    <input  required ngModel
+    name="dataValidade"
+    #dataValidade="ngModel"
+    type="date"
+    id="dataValidade"
+    class="form-control mb-3"
+    placeholder="Expiration Date...">
+    <div class="alert alert-danger" role="alert" *ngIf="dataValidade.touched && !dataValidade.valid">
+      Expiration Date is required
+    </div>
+
+    <label >Price</label>
+
+    <input  required ngModel
+    name="preco"
+    #preco="ngModel"
+    type="text"
+    id="preco"
+    class="form-control mb-3"
+    placeholder="Price...">
+    <div class="alert alert-danger" role="alert" *ngIf="preco.touched && !preco.valid">
+      The price is required
+    </div>
+
+    <label>Image</label>
+
+    <input  required ngModel
+    name="imagem"
+    #imagem="ngModel"
+    type="url"
+    id="imagem"
+    class="form-control mb-3"
+    placeholder="Image...">
+    <div class="alert alert-danger" role="alert" *ngIf="imagem.touched && !imagem.valid">
+      The Image is required
+    </div>
+
+    <label>Entity</label>
+
+    <select required ngModel
+     name="entidadeProd"
+     #entidadeProd="ngModel"
+     id="entidadeProd"
+     class="form-control mb-3">
+     <option *ngFor ="let entidade of entidades" [ngValue]= "entidade._id" >
+      {{entidade.nome}}
+    </option>
+    </select>
+
+    <label>Certification Number</label>
+
+    <input  required ngModel
+    name="numeroQualifica"
+    #numeroQualifica="ngModel"
+    type="text"
+    id="numeroQualifica"
+    class="form-control mb-3"
+    placeholder="Certification Number...">
+    <div class="alert alert-danger" role="alert" *ngIf="numeroQualifica.touched && !numeroQualifica.valid">
+      The Certification Number is required
+    </div>
+
+    <!-- Sign up button -->
+    <button mdbBtn color="info" class="btn btn-primary" style="margin-left:auto;margin-right:auto;display:block;margin-top:6%;margin-bottom:0%;padding: 15px 35%" type="submit" valeu="submit" block="true">Create</button>
+  </div>
+</form>
+  <!-- Default form register -->
+      </div>
+    </div>
+  </div>
+</div>

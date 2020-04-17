@@ -1,0 +1,50 @@
+<div class="row" >
+  <div class="col-md-11 mx-auto">
+    <div class="card" style="border-radius: 20px 20px 20px 20px; height: 109%;">
+      <div class="card-header" style="background-color:cornflowerblue; border-radius: 20px 20px 0px 0px">
+        <h3 class="mb-0" >Entity Registration</h3>
+      </div>
+      <div class="card-body">
+        <!-- Default form register -->
+<form (submit)="registarEntidade($event)" calss="text-center border border-light p-5">
+
+    <div class="form-group">
+      <!-- First name -->
+
+      <label>Name</label>
+
+     <input  required ngModel
+      name="nomeEnt"
+      #nomeEnt="ngModel"
+      type="text"
+      id="nomeEnt"
+      class="form-control mb-3"
+      placeholder="Name...">
+     <div class="alert alert-danger" role="alert" *ngIf="nomeEnt.touched && !nomeEnt.valid">
+      The Name is required
+    </div>
+
+    <label>Description</label>
+
+
+    <input  required ngModel
+      name="descEnt"
+      #descEnt="ngModel"
+      type="text"
+      id="descEnt"
+      class="form-control mb-3"
+      placeholder="Description...">
+     <div class="alert alert-danger" role="alert" *ngIf="descEnt.touched && !descEnt.valid">
+      The Description is required
+    </div>
+
+    <!-- Sign up button -->
+    <button mdbBtn color="info" class="btn btn-primary" style="margin-left:auto;margin-right:auto;display:block;margin-top:30%;margin-bottom:0%" type="submit" valeu="submit" block="true">Register</button>
+  </div>
+</form>
+  <!-- Default form register -->
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,49 @@
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+<button (click)=actuliza() class="btn btn-primary" style= "margin-left:87%;display:flex; padding: 6px 25px;">Update</button>
+<div class="container bootstrap snippet" style="padding-top: 1rem;">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="main-box no-header clearfix">
+                <div class="main-box-body clearfix">
+                    <div class="table-responsive">
+                        <table class="table user-list">
+                            <thead>
+                                <tr>
+                                <th class="text-center"><span>Purchase Date</span></th>
+                                <th class="text-center"><span>Total</span></th>
+                                <th class="text-center"><span>Total With Tax</span></th>
+                                <th>&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let compra of compras">
+                                <tr>
+                                    <td class="text-center">
+                                      <span>{{compra.data | date:'dd/MM/yyyy'}}</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="label label-default">{{compra.total | number:'.1-2'}}</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="label label-default">{{compra.precociva | number:'.1-2'}}</span>
+                                    </td>
+                                    <td style="width: 15%;">
+                                      <button  class="button" type="button" name="#btApagar">
+                                          <span class="fa-stack">
+                                              <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+                                          </span>
+                                      </button>
+                                      <button class="button3" type="button" name="#btApagar">
+                                          <span class="fa-stack">
+                                              <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                                          </span>
+                                      </button>
+                                  </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

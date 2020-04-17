@@ -1,0 +1,74 @@
+<div class="row" >
+  <div class="col-md-11 mx-auto">
+    <div class="card" style="border-radius: 20px 20px 20px 20px">
+      <div class="card-header" style="background-color:cornflowerblue; border-radius: 20px 20px 0px 0px">
+        <h3 class="mb-0" >Product Type Registration</h3>
+      </div>
+      <div class="card-body">
+        <!-- Default form register -->
+<form (submit)="registarTipo($event)" calss="text-center border border-light p-5">
+
+    <div class="form-group">
+      <!-- First name -->
+
+
+      <label>Name</label>
+      <input  required ngModel
+        name="nomeTipo"
+        #nomeTipo="ngModel"
+        type="text"
+        id="nomeTipo"
+        class="form-control mb-3"
+        placeholder="Name...">
+     <div class="alert alert-danger" role="alert" *ngIf="nomeTipo.touched && !nomeTipo.valid">
+      The Name is required
+    </div>
+
+    <label>Description</label>
+
+    <input required ngModel
+      name="descTipo"
+      #descTipo="ngModel"
+      type="text"
+      id="descTipo"
+      class="form-control mb-3"
+      placeholder="Description...">
+    <div class="alert alert-danger" role="alert" *ngIf="descTipo.touched && !descTipo.valid">
+      The Description is required
+    </div>
+
+    <label>Category</label>
+
+    <select required ngModel
+     name="subTipo"
+     #subTipo="ngModel"
+     id="subTipo"
+     class="form-control mb-3">
+     <option *ngFor ="let subCategoria of subCategorias" [ngValue]= "subCategoria._id" >
+      {{subCategoria.nome}}
+    </option>
+    </select>
+
+    <label>Certification</label>
+
+    <select required ngModel
+     name="certificacaoTipo"
+     #certificacaoTipo="ngModel"
+     id="certificacaoTipo"
+     class="form-control mb-3">
+     <option *ngFor ="let certicacao of certificacoes" [ngValue]= "certicacao._id" >
+      {{certicacao.nome}}
+    </option>
+    </select>
+
+
+
+    <!-- Sign up button -->
+    <button mdbBtn color="info" class="btn btn-primary" style="margin-left:auto;margin-right:auto;display:block;margin-top:6%;margin-bottom:0%" type="submit" valeu="submit" block="true">Register</button>
+  </div>
+</form>
+  <!-- Default form register -->
+      </div>
+    </div>
+  </div>
+</div>

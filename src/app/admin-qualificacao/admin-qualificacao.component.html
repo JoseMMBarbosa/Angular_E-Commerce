@@ -1,0 +1,61 @@
+<div class="row" >
+  <div class="col-md-11 mx-auto">
+    <div class="card" style="border-radius: 20px 20px 20px 20px">
+      <div class="card-header" style="background-color:cornflowerblue; border-radius: 20px 20px 0px 0px">
+        <h3 class="mb-0" >Certification Registration</h3>
+      </div>
+      <div class="card-body">
+        <!-- Default form register -->
+<form (submit)="registarQualificacao($event)" calss="text-center border border-light p-5">
+
+    <div class="form-group">
+      <!-- First name -->
+
+      <label>Name</label>
+
+
+      <input  required ngModel
+        name="nomeQual"
+        #nomeQual="ngModel"
+        type="text"
+        id="nomeQual"
+        class="form-control mb-3"
+        placeholder="Name...">
+     <div class="alert alert-danger" role="alert" *ngIf="nomeQual.touched && !nomeQual.valid">
+      The Name is required
+    </div>
+
+    <label>Description</label>
+
+    <input required ngModel
+      name="descQual"
+      #descQual="ngModel"
+      type="text"
+      id="descQual"
+      class="form-control mb-3"
+      placeholder="Description...">
+    <div class="alert alert-danger" role="alert" *ngIf="descQual.touched && !descQual.valid">
+      The Description is required
+    </div>
+
+    <label>Entity</label>
+
+    <select required ngModel
+     name="entidadeQual"
+     #entidadeQual="ngModel"
+     id="entidadeQual"
+     class="form-control mb-3">
+     <option *ngFor ="let entidade of entidades" [ngValue]= "entidade._id" >
+      {{entidade.nome}}
+    </option>
+    </select>
+
+    <!-- Sign up button -->
+    <button mdbBtn color="info" class="btn btn-primary" style="margin-left:auto;margin-right:auto;display:block;margin-top:12%;margin-bottom:0%" type="submit" valeu="submit" block="true">Register</button>
+  </div>
+</form>
+  <!-- Default form register -->
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="row" style="padding-top: 10rem;" >
+    <div class="col-md-4 mx-auto">
+      <div class="card" style="border-radius: 20px 20px 20px 20px">
+        <div class="card-header" style="background-color:cornflowerblue; border-radius: 20px 20px 0px 0px">
+          <h3 class="mb-0" >Producer Registration</h3>
+        </div>
+        <div class="card-body">
+          <!-- Default form register -->
+  <form (submit)="registarPro($event)" calss="text-center border border-light p-5">
+
+      <div class="form-group">
+        <!-- First name -->
+
+        <label>Email</label>
+
+       <input  required ngModel name="email"
+         #email="ngModel"
+         type="email"
+         id="email"
+         class="form-control mb-3"
+         placeholder="Email...">
+       <div class="alert alert-danger" role="alert" *ngIf="email.touched && !email.valid">
+        The Email is required
+      </div>
+
+      <label>Username</label>
+
+      <input required ngModel name="user"
+        #user="ngModel"
+        type="text"
+        id="user"
+        class="form-control mb-3"
+        placeholder="Username...">
+        <div class="alert alert-danger" role="alert" *ngIf="user.touched && !user.valid">
+          The Username is required
+        </div>
+
+        <label>Password</label>
+
+       <!-- Password -->
+       <input  required ngModel
+         name="pass"
+         #pass="ngModel"
+         type="password"
+         id="pass"
+         class="form-control mb-3"
+         placeholder="Password...">
+       <div class="alert alert-danger" role="alert" *ngIf="pass.touched && !pass.valid">
+        The Password is required
+      </div>
+      <!-- Sign up button -->
+      <button mdbBtn color="info" class="btn btn-primary" style="margin-left:auto;margin-right:auto;display:block;margin-top:12%;margin-bottom:0%" type="submit" valeu="submit" block="true">Register</button>
+    </div>
+  </form>
+    <!-- Default form register -->
+        </div>
+      </div>
+    </div>
+  </div>
